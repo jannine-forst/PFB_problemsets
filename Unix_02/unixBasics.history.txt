@@ -1,0 +1,99 @@
+    1  pwd
+    2  cd ../
+    4  ls -F
+    5  cd jfo/
+    6  mkdir problemsets
+    7  cd problemsets/
+    8  pwd
+    9  wget https://raw.githubusercontent.com/prog4biol/pfb2018/master/files/sequences.nt.fa
+   10  ls
+   11  wc -l sequences.nt.fa 
+   12  wc -c sequences.nt.fa 
+   13  man head
+   14  head -n 1 sequences.nt.fa 
+   15  tail -n 3 sequences.nt.fa 
+   17  man grep
+   19  grep '>' sequences.nt.fa | wc -l
+   20  mv sequences.nt.fa cancer_genes.fasta
+   22  wget https://raw.githubusercontent.com/prog4biol/pfb2018/master/files/cuffdiff.txt
+   23  ls
+   24  head cuffdiff.txt 
+   25  sort man
+   29  man sort
+   44  sort -k10 -r -o sort.cuffdiff.out cuffdiff.txt 
+   46  head sort.cuffdiff.out 
+   47  mv sort.cuffdiff.out sorted.cuffdiff.out 
+   48  ls
+   49  man head
+   52  wc -l top100.sorted.cuffdiff.out 
+   53  head -n 2 top100.sorted.cuffdiff.out 
+   57  cp top100.sorted.cuffdiff.out backup.top100.sorted.cuffdiff.out 
+   58  cut -f top100.sorted.cuffdiff.out 
+   59  man cut
+   72  cut -f 1 top100.sorted.cuffdiff.out > differently epressed.genes.txt
+   73  ls
+   74  head -n 100 sorted.cuffdiff.out > top100.sorted.cuffdiff.out 
+   75  man wc
+   76  man uniq
+   77  cut -f 1 top100.sorted.cuffdiff.out | sort | uniq > differentially.expressed.genes.txt
+   79  head differentially.expressed.genes.txt 
+   82  wc -l differentially.expressed.genes.txt 
+   83  ls
+   84  echo "# PFB_problemsets" >> README.md
+   85  git init
+   86  git add README.md
+   87  git commit -m "first commit"
+   88  git remote add origin https://github.com/jannine-forst/PFB_problemsets.git
+   89  git push -u origin master
+   90  ls
+   91  git add *
+   92  ls
+   93  mkdir Unix_01
+   94  mv *.out Unix_01/
+   95  ls
+   96  mv *.fasta Unix_01/
+   97  mv cuffdiff.txt Unix_01/
+   98  mv differentially.expressed.genes.txt Unix_01/
+   99  ls
+  100  git add *
+  101  git status
+  102  git commit -m 'Adding previous problem set files'
+  103  git status
+  104  git push
+  105  git commit -a
+  106  cd problemsets/
+  107  ls
+  108  git status
+  109  git man git
+  110  git --help
+  111  git commit --help
+  112  git status
+  113  git commit *
+  117  cd Unix_01/
+  122  git clone https://github.com/prog4biol/pfb2018.git
+  154  git pull pfb2018/
+  196  cd Unix_02/
+  197  nano mysequences.txt
+  198  ls
+  248  cd ../
+  249  git add Unix_02
+  250  git commit -m 'Unix 2 problemsets addded'
+  251  git status
+  252  ls
+  253  git add Unix_02
+  254  git status
+  255  cd Unix_02/
+  256  ls
+  257  mkdir fastas
+  258  mv ../Unix_01/cancer_genes.fasta fastas/
+  259  ls
+  260  cd ../
+  261  ls
+  262  git add *
+  263  git status
+  264  git commit -m 'Moved files'
+  265  git push
+  266  man rm
+  267  man cp
+  268  history
+  269  history > unixBasics.history.txt
