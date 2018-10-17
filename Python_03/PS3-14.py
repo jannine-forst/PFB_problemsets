@@ -8,11 +8,14 @@ dna = sys.argv[1]
 
 ecoRI = "GAATTC"
 
+#Make sure there is only one site!
+siteNum = dna.count(ecoRI)
+print("Number of EcoRI sites:",siteNum)
+
 ecoInDNA = dna.find(ecoRI)
 positionEcoRI = ecoInDNA + 1
 
 print("Starting position =",positionEcoRI)
-
 
 #Find the ending nucleotide position
 
