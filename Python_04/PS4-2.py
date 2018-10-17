@@ -9,6 +9,7 @@ print(people)
 #Split the string into individual words
 
 species = people.split(', ')
+print(people.split(', '))
 print(species)
 
 
