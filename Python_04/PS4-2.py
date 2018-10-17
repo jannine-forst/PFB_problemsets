@@ -8,8 +8,11 @@ print(people)
 
 #Split the string into individual words
 
-species = people.split(', ')
-print(people.split(', '))
+species = people.split(',')
 print(species)
+
+
+#Sort alphabetically
+print(sorted(species))
 
 
