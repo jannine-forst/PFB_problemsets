@@ -15,4 +15,7 @@ print(species)
 #Sort alphabetically
 print(sorted(species))
 
+#Sort be length of string and print
+
+print(sorted(species,key=str.len))
 
