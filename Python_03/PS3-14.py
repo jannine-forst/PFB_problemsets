@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import sys
 
-dna = "AGAATTCT"
-print("Should be position 2, nucleotide should be G")
+dna = sys.argv[1]
+#print("Should be position 2, nucleotide should be G")
 
 #Find the starting nucleotide position of an EcoRI site in the DNA sequence
 
