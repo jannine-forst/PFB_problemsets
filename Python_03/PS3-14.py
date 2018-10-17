@@ -22,7 +22,7 @@ print("Ending position =",endEcoRI)
 
 
 #Print outusing string formatting
+#Format => EcoRI startPos:yourStartPos endPos:yourEndPos
 
-
-
+print("EcoRI startPos:{} endPos:{}".format(positionEcoRI,endEcoRI))
 
