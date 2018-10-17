@@ -24,6 +24,8 @@ numC = capitalDNA.count("C")
 
 subDNA = capitalDNA[99:199]
 print("Length of DNA subsequence:",len(subDNA))
-print("DNA subsequence:"subDNA)
+print("DNA subsequence:",subDNA)
 
+subG = subDNA.count("G")
+print("Number of Gs in subsequence:",subG)
 
