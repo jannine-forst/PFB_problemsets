@@ -17,5 +17,5 @@ print(sorted(species))
 
 #Sort be length of string and print
 
-print(sorted(species,key=str.len))
+print(sorted(species,key=len))
 
