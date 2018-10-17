@@ -9,10 +9,13 @@ print("Should be position 1, nucleotide should be G")
 ecoRI = "GAATTC"
 
 ecoInDNA = dna.find(ecoRI)
-print(ecoInDNA)
-print(type(ecoInDNA))
+positionEcoRI = ecoInDNA + 1
+
+print("Starting position =",positionEcoRI)
+
 
 #Find the ending nucleotide position
+
 
 
 
