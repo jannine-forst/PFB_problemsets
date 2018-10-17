@@ -12,11 +12,15 @@ numC = capitalDNA.count("C")
 
 
 countAT = numA + numT
+countGC = numG + numC
 countTotal = numA + numT + numG + numC
 
 contentAT = countAT/countTotal
+contentGC = countGC/countTotal
+
 
 print("AT Content:",contentAT)
+print("GC Content:",contentGC)
 
 
 
