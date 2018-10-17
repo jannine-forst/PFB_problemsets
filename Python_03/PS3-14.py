@@ -2,7 +2,7 @@
 import sys
 
 dna = "AGAATTCT"
-print("Should be position 1, nucleotide should be G")
+print("Should be position 2, nucleotide should be G")
 
 #Find the starting nucleotide position of an EcoRI site in the DNA sequence
 
@@ -16,7 +16,9 @@ print("Starting position =",positionEcoRI)
 
 #Find the ending nucleotide position
 
+endEcoRI = ecoInDNA + 6
 
+print("Ending position =",endEcoRI)
 
 
 #Print outusing string formatting
