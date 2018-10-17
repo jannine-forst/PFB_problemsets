@@ -3,12 +3,12 @@
 
 #Create and print string
 
-people = ['sapiens', 'erectus', 'neanderthalensis']
+people = "sapiens, erectus, neanderthalensis"
 print(people)
 
 #Split the string into individual words
 
-species = people.split(,)
+species = people.split(', ')
 print(species)
 
 
