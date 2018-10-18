@@ -36,4 +36,9 @@ userValue = input("Please type in a new value: ")
 fav[userkey] = userValue
 print("The value of",userkey,"is now:",fav[userkey])
 
+for key in fav:
+	print(key,'->',fav[key])
+
+
+
 
