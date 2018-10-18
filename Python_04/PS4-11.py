@@ -13,7 +13,7 @@ seq = ['ATGCCCGGCCCGGC','GCGTGCTAGCAATACGATAAACCGG', 'ATATATATCGAT','ATGGGCCC']
 
 
 #Problem 12 - use list comprehension
-tuple_list = (print(len(each),"\t",each,"\n") for each in seq)
+tuple_list = [print(len(each),"\t",each,"\n") for each in seq]
 print(type(tuple_list))
 
 
