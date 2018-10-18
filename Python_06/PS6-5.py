@@ -31,9 +31,18 @@ with open("alpaca_stemcellproliferation_genes.tsv","r") as stemgenes:
 			stemSet.add(line)
 
 
-print(allSet)
+#All genes that are not involved in stemcell proliferation
 
+noProlif = allSet.difference(stemSet)
+#print(noProlif)
 
+print(len(allSet))
+print(len(stemSet))
+print(len(noProlif))
 
+# All genes in both stem cell and pigment
+pigstem = stemSet.intersection(pigSet)
+
+print(len(pigstem))
 
 
