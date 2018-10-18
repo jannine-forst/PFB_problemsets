@@ -4,8 +4,10 @@ import sys
 start=int(sys.argv[1])
 end=int(sys.argv[2])
 
-if
-[print(x) for x in range(start,end)]
+for x in range(start,end):
+	if x%2 != 0:
+		print(x)
+
 
 print("Done!")
 
