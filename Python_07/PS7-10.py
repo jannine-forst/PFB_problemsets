@@ -31,12 +31,15 @@ if enzyme in restrs:
 	cutsite = restrs[enzyme]
 	for found in re.finditer(r"([RYSWKMBDHVN\^])",cutsite):
 		lookingfor = found.group(0)
-		print(lookingfor)
+		#print("I'm looking for:",lookingfor)
 		replacing = legend[lookingfor]
-		print(replacing)
+		#print("I am replacing it with:",replacing)
+		replacing = replacing.rstrip()
 		fixcutsite = re.sub(lookingfor,replacing,cutsite)
-		print(found.group(0))
-		print(fixcutsite)
+		#print("This is what it should look like:",fixcutsite)
+		#print("This is what it looked like before:",cutsite)
+
+		
 
 
 else:

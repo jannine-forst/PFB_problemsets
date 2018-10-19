@@ -8,5 +8,5 @@ B	[CGT]
 D	[AGT]
 H	[ACT]
 V	[ACG]
-N	[.]
-^	[]
+N	.
+^	
