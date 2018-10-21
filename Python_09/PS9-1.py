@@ -2,6 +2,33 @@
 import re
 import sys
 
+def uptolength(dna,maxlength):
+	nowhitespace = dna.replace("\n","")
+	#print(dna)
+	regex = "[A-Z]{1," + str(maxlength) + "}"
+	sixty = re.findall(regex,nowhitespace)
+	sequence = '\n'.join(sixty)
+	#print(sequence)
+	return sequence
+
+def gc_content(dna):
+	c_count = dna.count('C')
+	g_count = dna.count('G')
+	dna_len = len(dna)
+	gc_content = (c_count + g_count) / dna_len
+	return gc_content
+
+
+def rev_comp(dna):
+	lowercase = dna.lower()
+	complT = lowercase.replace('a','T')
+	complTA = complT.replace('t','A')
+	complTAG = complTA.replace('c','G')
+	complTAGC = complTAG.replace('g','C')
+	return complTAGC[::-1]
+
+
+
 #dna = 'AGCT'
 
 #dna = '''GATGGGATTGGGGTTTTCCCCTCCCATGTGCTCAAGACTGGCGCTAAAAGTTTTGAGCTTCTCAAAAGTCTAGAGCCACC
@@ -12,70 +39,27 @@ import sys
 #CCAGAGGCTGCTCCCCCCGTGGCCCCTGCACCAGCAGCTCCTACACCGGCGGCCCCTGCACCAGCCCCCTCCTGGCCCCT
 #GTCATCTTCT'''
 
-dna = 'GATGGGATTGGGGTTTTCCCCTCCCATGTGCTCAAGACTGGCGCTAAAAGTTTTGAGCTTCTCAAAAGTCTAGAGCCACCGTCCAGGGAGCAGGTAGCTGCTGGGCTCCGGGGACACTTTGCGTTCGGGCTGGGAGCGTGCTTTCCACGACGGTGACACGCTTCCCTGGATTGGCAGCCAGACTGCCTTCCGGGTCACTGCCATGGAGGAGCCGCAGTCAGATCCTAGCGTCGAGCCCCCTCTGAGTCAGGAAACATTTTCAGACCTATGGAAACTACTTCCTGAAAACAACGTTCTGTCCCCCTTGCCGTCCCAAGCAATGGATGATTTGATGCTGTCCCCGGACGATATTGAACAATGGTTCACTGAAGACCCAGGTCCAGATGAAGCTCCCAGAATGCCAGAGGCTGCTCCCCCCGTGGCCCCTGCACCAGCAGCTCCTACACCGGCGGCCCCTGCACCAGCCCCCTCCTGGCCCCTGTCATCTTCT'
+#dna = 'GATGGGATTGGGGTTTTCCCCTCCCATGTGCTCAAGACTGGCGCTAAAAGTTTTGAGCTTCTCAAAAGTCTAGAGCCACCGTCCAGGGAGCAGGTAGCTGCTGGGCTCCGGGGACACTTTGCGTTCGGGCTGGGAGCGTGCTTTCCACGACGGTGACACGCTTCCCTGGATTGGCAGCCAGACTGCCTTCCGGGTCACTGCCATGGAGGAGCCGCAGTCAGATCCTAGCGTCGAGCCCCCTCTGAGTCAGGAAACATTTTCAGACCTATGGAAACTACTTCCTGAAAACAACGTTCTGTCCCCCTTGCCGTCCCAAGCAATGGATGATTTGATGCTGTCCCCGGACGATATTGAACAATGGTTCACTGAAGACCCAGGTCCAGATGAAGCTCCCAGAATGCCAGAGGCTGCTCCCCCCGTGGCCCCTGCACCAGCAGCTCCTACACCGGCGGCCCCTGCACCAGCCCCCTCCTGGCCCCTGTCATCTTCT'
 
 #print(dna)
 
-#dna = sys.argv[1]
-#maxlength = sys.argv[2]
-maxlength = 20
-
-#output = open("Letssee.fasta", "w")
-def max60(dna,maxlength):
-	nowhitespace = dna.replace("\n","")
-	#print(dna)
-	regex = "[A-Z]{1," + str(maxlength) + "}"
-	sixty = re.findall(regex,nowhitespace)
-	sequence = '\n'.join(sixty)
-	#print(sequence)
-	return sequence
-
-#formatted_sequence = max60(dna)
-#print("Sequence\n",max60(dna))
-print(max60(dna,maxlength))
-
-#print(len(max60(dna)))
-#print(len('GATGGGATTGGGGTTTTCCCCTCCCATGTGCTCAAGACTGGCGCTAAAAGTTTTGAGCTT'))
-
-#output.write(max60(dna))
+sequencefile = sys.argv[1]
+maxlength = sys.argv[2]
 
 
+with open(sequencefile, "r") as input_file, open("Reformatted_sequence.fasta", "w") as output:
+	dna = input_file.read()
 
+	print(uptolength(dna,maxlength))
+	output.write(uptolength(dna,maxlength))
+	output.write("\n")
 
+	print("Percent GC:","{:.2%}".format(gc_content(dna)))
+	output.write("Percent GC:")
+	output.write("{:.2%}".format(gc_content(dna)))
+	output.write("\n")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#def max60(dna):
-#	sequence = []
-	
-
-#	number = len(dna)
-	
-#	print(number)
-#	return max60
-
-#result = max60(dna)
-#print(result)
-
+	print("Reverse Complement:",uptolength( rev_comp(dna) , maxlength ))
+	output.write("Reverse Complement: "+uptolength( rev_comp(dna) , maxlength )+"\n")
 
 

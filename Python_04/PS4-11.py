@@ -16,5 +16,9 @@ seq = ['ATGCCCGGCCCGGC','GCGTGCTAGCAATACGATAAACCGG', 'ATATATATCGAT','ATGGGCCC']
 tuple_list = [print(len(each),"\t",each,"\n") for each in seq]
 print(type(tuple_list))
 
-
+#Problem 13 - add position in list
+tuple_list = [print((seq.index(each)+1),"\t",len(each),"\t",each,"\n") for each in seq]
+#each = seq[1]
+#print(seq.index('ATGCCCGGCCCGGC'))
+#print("\t",len(each),"\t",each,"\n")
 
