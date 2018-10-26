@@ -5,7 +5,7 @@ import re
 #Write a script that takes a multi-FASTA file Python_08.fasta
 #from user input and breaks each sequence into codons (every
 #three nucleotides is a codon) in just the first reading frame.
-
+codons = []
 filename = ''
 try:
 	filename = sys.argv[1]
@@ -27,4 +27,8 @@ else:
 			line = line.rstrip()
 			sequence = sequence + line
 	#print(sequence) works now!
+		codons = re.findall(r"(.{3})",sequence)	
+		if sequence != '':
+			print(codons)
 			
+				
